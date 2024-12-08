@@ -16,14 +16,13 @@ export const HW3 = () => {
     
   ]);
   
-  
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setCurrentText(event.currentTarget.value);
   };
 
   const handleSave = () => {
     setTexts([currentText, ...texts])
-    
+    setCurrentText("")
   };
 
   return (
