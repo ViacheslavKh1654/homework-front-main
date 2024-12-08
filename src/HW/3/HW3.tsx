@@ -1,4 +1,4 @@
-import { useState, ChangeEvent } from 'react';
+import { useState, ChangeEventHandler } from 'react';
 
 export const HW3 = () => {
   // 1️⃣ Раскомментируйте JSX(HW3.tsx) и вы увидите,
@@ -7,22 +7,21 @@ export const HW3 = () => {
   // - прописать типизацию, где необходимо
   // - починить все, что горит красным
   // - дописать функциональность (где указано комментариями)
-  // - приложение должно компилироваться и запускаться в браузере
-
+  // - приложение должно компилироваться и запускаться в браузе
   // ❗ Массив с данными не трогаем! Текст не меняем !
 
   const [currentText, setCurrentText] = useState('');
   const [texts, setTexts] = useState<string[]>([
     'То, что вы делаете по ночам, то и делает вас богатым. (Аль Капоне)',
+    
   ]);
-
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+  
+  const handleChange = (event: React.InputHTMLAttributes<HTMLInputElement>) => {
     setCurrentText(currentText);
   };
 
   const handleSave = () => {
     setTexts(texts)
-    // А ЗАТЕМ УБРАТЬ ЗА СОБОЙ В currentText
     setCurrentText("")
   };
 
@@ -36,8 +35,8 @@ export const HW3 = () => {
 
       <input id={'hw03-input'} type="text" value={currentText} onChange={handleChange} />
 
-      <button id={'hw03-button'} onClick={() => {handleSave()}}> // НЕ ХВАТАТЕТ ФУНКЦИИ
-        Сохранить
+      <button id={'hw03-button'}
+        onClick={() => { handleSave }}>
       </button>
 
       <h1 style={{ marginTop: '50px' }}>СПИСОК ДЕЛ НА ДЕНЬ:</h1>
