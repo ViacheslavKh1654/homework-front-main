@@ -1,4 +1,4 @@
-import { useState, ChangeEventHandler } from 'react';
+import { useState, ChangeEvent } from 'react';
 
 export const HW3 = () => {
   // 1️⃣ Раскомментируйте JSX(HW3.tsx) и вы увидите,
@@ -16,7 +16,7 @@ export const HW3 = () => {
     
   ]);
   
-  const handleChange = (event: React.InputHTMLAttributes<HTMLInputElement>) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setCurrentText(currentText);
   };
 
@@ -36,7 +36,7 @@ export const HW3 = () => {
       <input id={'hw03-input'} type="text" value={currentText} onChange={handleChange} />
 
       <button id={'hw03-button'}
-        onClick={() =>  handleSave()}>
+        onClick={() =>  {handleSave()}}>
       </button>
 
       <h1 style={{ marginTop: '50px' }}>СПИСОК ДЕЛ НА ДЕНЬ:</h1>
