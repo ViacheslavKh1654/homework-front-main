@@ -23,6 +23,7 @@ export const HW3 = () => {
   const handleSave = () => {
     setTexts([currentText, ...texts])
     setCurrentText("")
+    console.log(currentText)
   };
 
   return (
